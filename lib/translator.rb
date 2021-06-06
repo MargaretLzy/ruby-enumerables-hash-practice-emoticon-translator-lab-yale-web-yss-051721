@@ -2,7 +2,7 @@ require 'yaml'
 
 # Write a method that loads the emoticons.yml file.
 def load_library(path)
- emoticons = YAML.load_file(path)
+ emoticons = YAML.load_file(file_path)
 
   final_emoticons = emoticons.each_with_object({}) do |(key,value), final_hash|
     value.each do |mixed_emoji|
