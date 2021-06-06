@@ -1,22 +1,17 @@
 require 'yaml'
 
 # Write a method that loads the emoticons.yml file.
-def load_library(path)
- emoticons = YAML.load_file(file_path)
 
-  final_emoticons = emoticons.each_with_object({}) do |(key,value), final_hash|
-    value.each do |mixed_emoji|
-      if !final_hash[key]
-        final_hash[key] = { }
-      end
-      if !final_hash[mixed_emoji] && emoticons[key].find_index(mixed_emoji) < 1
-        final_hash[key][:english] = mixed_emoji
-      end
-      if !final_hash[mixed_emoji] && emoticons[key].find_index(mixed_emoji) >= 1
-        final_hash[key][:japanese] = mixed_emoji
-      end
-    end
+def load_library(path)
+  emoticons = YAML.load_file(path)
+  result= {}
+
+  emoticons.each do |key,emotion|
+    result[key] = {}
+    result[key][:english] = value[0]
+    result[key][:japanese] = value[1]
   end
+  result
 end
 
 # get japanese meaning:
