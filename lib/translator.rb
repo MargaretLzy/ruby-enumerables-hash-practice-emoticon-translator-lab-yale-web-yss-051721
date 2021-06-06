@@ -22,9 +22,9 @@ end
 def get_japanese_emoticon(path, emotion)
   hash = load_library(path) 
   emotion = hash.keys.find do |key|
-    hash[key][:english] ==emotion
+    hash[key][:english] == emotion
   end
-  emotion? hash[emotion][:Japanese]
+  emotion? hash[emotion][:japanese]
   :"Sorry, the emoticon was not found"
   end
 
