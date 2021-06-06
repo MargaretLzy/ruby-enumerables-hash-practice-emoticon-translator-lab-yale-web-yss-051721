@@ -8,8 +8,8 @@ def load_library(path)
 
   emoticons.each do |key,emotion|
     result[key] = {}
-    result[key][:english] = value[0]
-    result[key][:japanese] = value[1]
+    result[key][:english] = emotion[0]
+    result[key][:japanese] = emotion[1]
   end
   result
 end
