@@ -32,5 +32,5 @@ def get_english_meaning(path, emotion)
   emotion = hash.keys.find do |key|
     hash[key][:japanese] == emotion
   end
-  emotion ? hash[emotion][:english] :"Sorry, that emoticon was not found"
+  emotion ? emotion :"Sorry, that emoticon was not found"
   end
