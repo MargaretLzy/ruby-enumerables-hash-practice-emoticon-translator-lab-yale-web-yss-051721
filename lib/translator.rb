@@ -19,9 +19,12 @@ end
 # calls on #load_library and gives it the argument of the file path
 # returns the Japanese equivalent of an English emoticons
 
-def get_japanese_emoticon(path, emoticon)
+def get_japanese_emoticon(path, emotion)
   emoticons = load_library(path) 
-  result = emoticons["get_emoticon"][emoticon]
+  result = library.keys.find do |key|
+    library[key][:english] ==emotion
+  end
+  emotion? library[emotion][:Japanese]:""
   if result
     result
   else
