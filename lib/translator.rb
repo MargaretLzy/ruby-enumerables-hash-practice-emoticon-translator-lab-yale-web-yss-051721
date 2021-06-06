@@ -27,12 +27,10 @@ def get_japanese_emoticon(path, emotion)
   emotion ? hash[emotion][:japanese] :"Sorry, that emoticon was not found"
   end
 
-def get_english_meaning(path, emoticon)
-  emoticons = load_library(path)
-  result = emoticons["get_meaning"][emoticon] 
-  if result
-    result
-  else
-    "Sorry, that emoticon was not found"
+def get_english_meaning(path, emotion)
+  hash = load_library(path) 
+  emotion = hash.keys.find do |key|
+    hash[key][:japanese] == emotion
   end
-end
+  emotion ? hash[emotion][:english] :"Sorry, that emoticon was not found"
+  end
