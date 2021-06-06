@@ -20,11 +20,11 @@ end
 # returns the Japanese equivalent of an English emoticons
 
 def get_japanese_emoticon(path, emotion)
-  emoticons = load_library(path) 
-  result = library.keys.find do |key|
-    library[key][:english] ==emotion
+  hash = load_library(path) 
+  result = hash.keys.find do |key|
+    hash[key][:english] ==emotion
   end
-  result? library[emotion][:Japanese]
+  result? hash[emotion][:Japanese]
   :"Sorry, the emoticon was not found"
   end
 
